@@ -23,7 +23,7 @@ Navigate into the project directory:
 
 bash
 
-    cd your-repository-name
+    cd client
 
 Setting Up the Server
 
