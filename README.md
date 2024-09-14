@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+Assignment Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack application built with React for the frontend and Node.js for the backend. It allows users to post and view assignments. The project includes a basic client-server architecture with separate directories for the client and server.
+Getting Started
 
-## Available Scripts
+To get started with this project, follow these steps:
+Prerequisites
 
-In the project directory, you can run:
+Ensure you have the following software installed:
 
-### `npm start`
+    Node.js and npm (Node Package Manager)
+    MariaDB or any other compatible MySQL database
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Cloning the Repository
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    Clone the repository to your local machine:
 
-### `npm test`
+    bash
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+git clone https://github.com/Hasnatrasool/client.git
 
-### `npm run build`
+Navigate into the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    cd your-repository-name
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Setting Up the Server
 
-### `npm run eject`
+    Navigate to the server directory:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    bash
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+cd server
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Install the server dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+bash
 
-## Learn More
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Start the server:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+bash
 
-### Code Splitting
+    node server.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    The server will be running on port 5000 by default. Ensure that this port is not being used by another application.
 
-### Analyzing the Bundle Size
+Setting Up the Client
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Open another terminal window and navigate to the client directory:
 
-### Making a Progressive Web App
+    bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+cd client
 
-### Advanced Configuration
+Install the client dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+bash
 
-### Deployment
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Start the client:
 
-### `npm run build` fails to minify
+bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    npm start
+
+    The client application will be running on http://localhost:3000 by default.
+
+Project Structure
+
+    client/: Contains the React frontend application.
+    server/: Contains the Node.js backend application.
+
+Features
+
+    Post Assignment: Users can post new assignments using a form.
+    View Assignments: Users can view a list of assignments.
+
+Database Setup
+
+Make sure your database is set up correctly. You can check the structure of the assignments table using the following SQL command:
+
+sql
+
+DESCRIBE assignments;
+
+Ensure that the table structure matches the expected schema:
+
+    id (int, primary key, auto-increment)
+    user_id (int, nullable)
+    title (varchar, 255, nullable)
+    description (text, nullable)
+    file_link (varchar, 255, nullable)
+    created_at (timestamp, default: current_timestamp())
+    deadline (date, nullable)
+
+Error Handling
+
+If you encounter any issues, make sure to check the server and client logs for error messages. Common issues may include:
+
+    Incorrect API endpoints
+    Database connection issues
+    Missing environment variables
